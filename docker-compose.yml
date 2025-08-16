@@ -1,0 +1,12 @@
+services:
+  rickascii:
+    build: .
+    ports:
+      - "8085:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./rick.txt:/app/rick.txt:ro
+      - ./win.py:/app/win.py:ro
+      - ./display:/app/display:ro
