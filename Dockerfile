@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm install --only=production
 
 COPY . .
-COPY ./display ./display --chmod=755
+COPY --chmod=755 ./display ./display
 
 EXPOSE 80
 
